@@ -34,6 +34,29 @@ function wproc_register_admin_menu() {
 
 add_action ( 'admin_menu', 'wproc_register_admin_menu' ); // action= run function  when admin_menu = called
 
+
+
+
+/* Upon deactivation $wproc_settings ALL,CUSTOM will need to be true while AUTH needs to be set on False
+ * checkout : https://premium.wpmudev.org/blog/activate-deactivate-uninstall-hooks/
+
+register_deactivation_hook( __FILE__, 'my_plugin_deactivation' );
+function my_plugin_deactivation() {
+	// Deactivation rules here
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
 /*
 function wproc_register_admin_style() {
 	wp_register_style( 'wproc_admin_style', plugins_url('WP_REST_OutputControle/css/wproc.css', __FILE__));
