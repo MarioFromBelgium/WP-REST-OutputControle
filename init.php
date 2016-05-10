@@ -36,16 +36,16 @@ add_action ( 'admin_menu', 'wproc_register_admin_menu' ); // action= run functio
 
 
 
-
-/* Upon deactivation $wproc_settings ALL,CUSTOM will need to be true while AUTH needs to be set on False
- * checkout : https://premium.wpmudev.org/blog/activate-deactivate-uninstall-hooks/
-
 register_deactivation_hook( __FILE__, 'my_plugin_deactivation' );
+//returns all db-settings to false upon deactivation
 function my_plugin_deactivation() {
-	// Deactivation rules here
+	$wproc_settings->ALL = False;
+	$wproc_settings->CUSTOM = False;
+	$wproc_settings->AUTH = False;	
+	update_option ( 'wproc_settings', $wproc_settings );
 }
 
-*/
+
 
 
 

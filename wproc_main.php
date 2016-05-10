@@ -81,7 +81,7 @@ if ($_POST ['wproc_hidden'] == 'Y') {
 		echo "<h3>Requier Authentication</h3>";
 		echo "<b>IMPORTANT!:</b>WP Rest Controller opens, by default, WP REST API to all, including non-athenticated, calls.";
 		echo "<br>";
-		echo "Enable the requierment for authentication hereunder (valid for ALL, including your custom, routes and endpoints.</h3>"?>
+		echo "Enable the requierment for authentication for all enabled REST routes and endpoints.</h3>"?>
         <p>
         
         <?php _e("Require Authentication:" ); ?>
