@@ -43,58 +43,17 @@ function my_plugin_deactivation() {
 	$wproc_settings->CUSTOM = False;
 	$wproc_settings->AUTH = False;	
 	update_option ( 'wproc_settings', $wproc_settings );
+	
 }
 
 
 
 register_uninstall_hook( __FILE__, 'my_plugin_uninstall' );
 function my_plugin_uninstall() {
-	// Uninstallation stuff here
-	delete_option( $wproc_settings );
+	// Deletes the field in the options-table
+	delete_option( 'wproc_settings' );
 }
 
 
 
-
-
-
-
-
-
-
-
-
-/*
-function wproc_register_admin_style() {
-	wp_register_style( 'wproc_admin_style', plugins_url('WP_REST_OutputControle/css/wproc.css', __FILE__));
-	wp_enqueue_style ( 'wproc_admin_style' );
-}
-
-add_action ( 'admin_init', 'wproc_register_admin_style' );
-*/
-
-
-  
- 
-/*
- * add_action( 'admin_init', 'wproc_register_admin_style' );
- * function wproc_register_admin_style() {
- * wp_register_style( 'wproc_admin_style', plugins_url('WP_REST_OutputControle/css/wproc.css', __FILE__));
- * }
- */
-/*
-if (is_page_template ( 'WP_REST_OutputController.php' )) { // activate only in wproc_admin page
-	wp_enqueue_style ( 'wproc_admin_style' );
-}
-*/
-
-
-
-/*
- * function plugin_name_scripts() {
-	//wp_enqueue_style( 'style', plugins_url('css/demo_style.css', __FILE__));
-	wp_enqueue_script( 'script', plugins_url('js/test.js', __FILE__), array('jquery'));
-}
-add_action('init', 'plugin_name_scripts');
- */
 ?>
