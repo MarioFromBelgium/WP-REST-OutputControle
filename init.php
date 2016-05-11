@@ -47,6 +47,13 @@ function my_plugin_deactivation() {
 
 
 
+register_uninstall_hook( __FILE__, 'my_plugin_uninstall' );
+function my_plugin_uninstall() {
+	// Uninstallation stuff here
+	delete_option( $wproc_settings );
+}
+
+
 
 
 
